@@ -10,7 +10,7 @@ interface OPTIONS {
 export function request(options: OPTIONS): Promise<any> {
     let defaultOptions = {
         method: 'GET',
-        baseURL: 'http://localhost:8000',
+        baseURL: 'http://localhost:4000',
         headers: {},// 请求头
         data: {},//请求体
     }

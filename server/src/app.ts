@@ -82,20 +82,7 @@ app.get('/verify/:filename', async (req: Request, res: Response): Promise<any> =
     res.json({ success: true });
   });
 }); */
-/**
-fields { filename: [ 'dog.jpg' ] }
-files {
-  chunk: [
-    {
-      fieldName: 'chunk',
-      originalFilename: 'dog.jpg',
-      path: 'C:\\Users\\张仁阳\\AppData\\Local\\Temp\\Di8EC5szolDXl7pMQXvGuJlt.jpg',
-      headers: [Object],
-      size: 10140
-    }
-  ]
-}
- */
+
 app.use(function (_req: Request, _res: Response, next: NextFunction) {
   next(createError(404));
 });
@@ -107,10 +94,3 @@ app.use(function (error: any, _req: Request, res: Response, _next: NextFunction)
   });
 });
 export default app;
-
-/**
- 1.跨域传cookie 1.origin不能用* 2  xhr.withCredential:include    all
- * 传来的肯定是流
-const ws = fs。createWriteStream('xxxx');
-req.pipe(ws)
- */

@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState, useEffect } from 'react';
 import { Row, Col, Input, Button, message, Table, Progress } from 'antd';
-import { request } from './utils';
+import { request } from './request';
 const DEFAULT_SIZE = 1024 * 1024 * 100;
 enum UploadStatus {
     INIT,
@@ -30,7 +30,8 @@ function Upload() {
 
     useEffect(() => {
         if (currentFile) {
-            /*   let objectURL = window.URL.createObjectURL(currentFile);
+            /* 这种方式容易造成内存泄漏   
+              let objectURL = window.URL.createObjectURL(currentFile);
               setObjectURL(objectURL);
               return () => window.URL.revokeObjectURL(objectURL); */
             const reader = new FileReader();
@@ -104,7 +105,6 @@ function Upload() {
             reset();
         } catch (error) {
             message.error('上传失败或暂停');
-            //uploadParts(partList, filename);
         }
     }
     function createRequests(partList: Part[], uploadList: Uploaded[], filename: string) {
@@ -236,4 +236,5 @@ function allowUpload(file: File) {
 }
 
 export default Upload;
+
 //blob,二进制，流 arraybuffer  Buffer
