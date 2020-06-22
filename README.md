@@ -4,7 +4,7 @@
 ### 前端部分（create-reac-app + antd + typescript)
 * 创建项目并安装依赖
 ```bash
-$ mkdir upload-project && cd upload-project
+$ mkdir upload-files && cd upload-files
 $ npx create-react-app client --tempalte typescript
 $ yarn add antd
 $ cd client
